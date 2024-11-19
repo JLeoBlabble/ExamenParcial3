@@ -8,4 +8,8 @@ int main() {
     Estudiante estudiante;
     estudiante.mostrarEstudiante("Jaime", 67, 5.8);
 
+    estudiante.mostrarMaterias();
+    estudiante.agregarMateria();
+    estudiante.eliminarMateria();
+
 }

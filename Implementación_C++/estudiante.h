@@ -10,9 +10,15 @@ class Estudiante {
     int edad;
     float promedio;
 
+    string materias[5] = {"Matemáticas", "Programación", "Inglés", "Informática"};
+
     Estudiante();
 
     void mostrarEstudiante(string nombre, int edad, float promedio);
+
+    void mostrarMaterias();
+    void agregarMateria();
+    void eliminarMateria();
 
 };
 
