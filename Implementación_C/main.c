@@ -7,7 +7,21 @@ int main ()
     char agr_materia [30];
     char elim_materia [30];
 
-    inicializarEstudiante (&estudiante, "Jaime", 67, 5.8);
+    printf ("Introduzca el nombre del estudiante: ");
+    scanf ("%s", estudiante.nombre);
+
+    do {
+        printf ("Introduzca la edad del estudiante (18 o mas): ");
+        scanf ("%d", &estudiante.edad);
+    } while (estudiante.edad < 18);
+
+    do
+    {
+        printf ("Introduzca el promedio del estudiante (entre 0 y 10): ");
+        scanf ("%f", &estudiante.promedio);
+    } while (estudiante.promedio < 0 || estudiante.promedio > 10);
+
+    inicializarEstudiante (&estudiante, estudiante.nombre, estudiante.edad, estudiante.promedio);
 
     mostrarEstudiante (&estudiante);
 
