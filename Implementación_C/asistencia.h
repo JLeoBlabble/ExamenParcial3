@@ -1,4 +1,4 @@
-#ifndef ASISTENCIA_H
+/* #ifndef ASISTENCIA_H
 #define ASISTENCIA_H
 
 typedef struct
@@ -6,7 +6,7 @@ typedef struct
     char fecha[10];
     char materia[20];
     char estado[10];
-};
+}
 
     Asistencia;
 
@@ -14,3 +14,5 @@ typedef struct
     void mostrarAsistencia (Asistencia *asist);
 
 #endif
+
+*/
