@@ -1,8 +1,7 @@
 #include "asistencia.h"
-#include <stdio.h>
 #include <string.h>
 
-void inicializarAsistencia (Asistencia *asist, char *fecha, char *materia, char *estado)
+void inicializarAsistencia (Asistencia *asist, const char *fecha, const char *materia, const char *estado)
 {
     strncpy (asist -> fecha, fecha, sizeof (asist -> fecha));
     strncpy (asist -> materia, materia, sizeof (asist -> materia));
