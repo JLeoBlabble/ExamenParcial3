@@ -20,7 +20,7 @@ void mostrarEstudiante (Estudiante *est)
 {
     printf ("\nNombre: %s\n", est -> nombre);
     printf ("Edad: %d\n", est -> edad);
-    printf ("Promedio: %.2f\n", est -> promedio);
+    printf ("Promedio: %f\n", est -> promedio);
 }
 
 void mostrarMaterias (Estudiante *est)
