@@ -1,4 +1,4 @@
-/* #ifndef ASISTENCIA_H
+#ifndef ASISTENCIA_H
 #define ASISTENCIA_H
 
 typedef struct
@@ -14,5 +14,3 @@ typedef struct
     void mostrarAsistencia (Asistencia *asist);
 
 #endif
-
-*/
