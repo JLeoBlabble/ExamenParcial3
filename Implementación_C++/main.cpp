@@ -9,7 +9,10 @@ int main() {
     estudiante.mostrarEstudiante("Jaime", 67, 5.8);
 
     estudiante.mostrarMaterias();
-    estudiante.agregarMateria();
     estudiante.eliminarMateria();
+    estudiante.agregarMateria();
+    estudiante.mostrarMaterias();
 
 }
+
+// preguntar si quiere añadir/preguntar, preguntar si quiere seguir añadiendo/eliminando

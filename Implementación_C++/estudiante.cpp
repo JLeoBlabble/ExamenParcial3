@@ -31,19 +31,13 @@ void Estudiante::agregarMateria() {
     string materiaAgregada;
     cout << "Introduzca la materia que deseas agregar: ";
     cin >> materiaAgregada;
-    for (int i = 0; i < 5; i++) {
+    for (int i = 0; i < 4; i++) {
         if (materias[i].empty()) {
             materias[i] = materiaAgregada;
             cout << "La materia agregada es: " << materiaAgregada << endl;
             return;
 
         }
-        if (materiaAgregada != string()) {
-            cout << "Por favor introduzca una materia válida: ";
-            cin >> materiaAgregada;
-        }
-        materiaAgregada = materias[4];
-
     }
 }
 
@@ -56,11 +50,6 @@ void Estudiante::eliminarMateria() {
             materias[i] = "";
             cout << "La materia eliminada es: " << materiaEliminada << endl;
         }
-        else {
-            cout << "Por favor introduzca una materia válida: ";
-            cin >> materiaEliminada;
-        }
-        break;
     }
 }
 

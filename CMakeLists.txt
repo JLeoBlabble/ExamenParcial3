@@ -8,4 +8,5 @@ include_directories(.)
 add_executable(Lenguaje_C++
         Implementación_C++/main.cpp
         Implementación_C++/estudiante.h
-        Implementación_C++/estudiante.cpp)
+        Implementación_C++/estudiante.cpp
+        Implementación_C++/asistencia.h)
