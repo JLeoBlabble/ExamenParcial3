@@ -3,8 +3,12 @@
 #include "asistencia.h"
 #include "estudiante.h"
 
+// int en la que se ejecutan las funciones del estudiante y de la asistencia
+
 int main ()
 {
+    // Definicion de las variables del estudiante y de la asistencia
+
     Estudiante estudiante;
     char agr_materia [30];
     char elim_materia [30];
@@ -15,6 +19,13 @@ int main ()
     char asist_materia [20];
     char asist_estado [20];
     int materia_valida;
+
+    /*
+    Se pide al usuario que introduzca el nombre, la edad y el promedio del estudiante.
+    Ya que C no tiene un sistema integrado para el manejo de excepciones,
+    se hace uso del bucle do-while para que la edad sea mayor o igual a 18 y para que el promedio sea entre 0 y 10
+    Luego se imprimen lod datos pedidos del estudiante.
+    */
 
     printf ("Introduzca el nombre del estudiante: ");
     scanf ("%s", estudiante.nombre);
@@ -34,6 +45,11 @@ int main ()
     mostrarEstudiante (&estudiante);
 
     mostrarMaterias (&estudiante);
+
+    /*
+    Se pide al usuario que introduzca el nombre de la materia que desea agregar, y posteriormente eliminar.
+    Y al igual que en el caso anterior, se usa el bucle do-while para asegurarse de que las materias sean validas.
+    */
 
     printf ("\nIngrese la materia que desee agregar: ");
     scanf ("%s", agr_materia);
@@ -57,6 +73,11 @@ int main ()
     printf ("\nEliminando materia: %s\n", elim_materia);
     eliminarMateria (&estudiante, elim_materia);
     mostrarMaterias (&estudiante);
+
+    /*
+    Se pide al usuario que introduzca la fecha, la materia y el estado de la asistencia.
+    De nuevo, se usa el bucle do-while para asegurarse de que tanto la materia como el estado sean validos.
+    */
 
     printf ("\nIngrese la fecha de la asistencia (DD/MM/AAAA): ");
     scanf ("%s", asist_fecha);

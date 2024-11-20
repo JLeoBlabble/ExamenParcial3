@@ -1,6 +1,8 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 
+// Definicion de la estructura Estudiante y de sus variables
+
 typedef struct
 {
 
@@ -11,6 +13,8 @@ typedef struct
     char materias[5][20];
     int num_materias;
 }
+
+// Definicion de las funciones par inicializar y mostrar el estudiante, y para mostrar, agregar y eliminar las materias
 
     Estudiante;
 

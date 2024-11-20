@@ -1,12 +1,16 @@
 #ifndef ASISTENCIA_H
 #define ASISTENCIA_H
 
+// Definicion de la estructura Asistencia y de sus variables
+
 typedef struct
 {
     char fecha[10];
     char materia[20];
     char estado[20];
 }
+
+// Definicion de las funciones par inicializar y mostrar la asistencia
 
     Asistencia;
 
