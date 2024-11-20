@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void inicializarEstudiante (Estudiante *est, char *nombre, int edad, float promedio)
+void inicializarEstudiante (Estudiante *est, const char *nombre, const int edad, const float promedio)
 {
     strncpy (est -> nombre, nombre, sizeof (est -> nombre));
     est -> edad = edad;
@@ -18,7 +18,7 @@ void inicializarEstudiante (Estudiante *est, char *nombre, int edad, float prome
 
 void mostrarEstudiante (Estudiante *est)
 {
-    printf ("Nombre: %s\n", est -> nombre);
+    printf ("\nNombre: %s\n", est -> nombre);
     printf ("Edad: %d\n", est -> edad);
     printf ("Promedio: %.2f\n", est -> promedio);
 }
@@ -32,7 +32,7 @@ void mostrarMaterias (Estudiante *est)
     }
 }
 
-void agregarMateria (Estudiante *est, char *materia)
+void agregarMateria (Estudiante *est, const char *materia)
 {
     if (est -> num_materias < 5)
     {

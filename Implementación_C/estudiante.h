@@ -14,10 +14,10 @@ typedef struct
 
     Estudiante;
 
-    void inicializarEstudiante (Estudiante *est, char *nombre, int edad, float promedio);
+    void inicializarEstudiante (Estudiante *est, const char *nombre, int edad, float promedio);
     void mostrarEstudiante (Estudiante *est);
     void mostrarMaterias (Estudiante *est);
-    void agregarMateria (Estudiante *est, char *materia);
+    void agregarMateria (Estudiante *est, const char *materia);
     void eliminarMateria (Estudiante *est, char *materia);
 
 #endif
