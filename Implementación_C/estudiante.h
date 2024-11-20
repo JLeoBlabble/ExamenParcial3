@@ -1,7 +1,8 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 
-typedef struct {
+typedef struct
+{
 
     char nombre[30];
     int edad;
