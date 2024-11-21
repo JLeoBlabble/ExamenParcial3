@@ -13,6 +13,8 @@ int main ()
     char agr_materia [30];
     char elim_materia [30];
     int elim_valida;
+    int agr_valida;
+    char materias_validas [6][30]= {"Programacion", "Matematicas", "Fisica", "Ingles", "Informatica", "Tecnicas de la Comunicacion"};
 
     Asistencia asistencia;
     char asist_fecha [10];
@@ -51,15 +53,41 @@ int main ()
     Y al igual que en el caso anterior, se usa el bucle do-while para asegurarse de que las materias sean validas.
     */
 
-    printf ("\nIngrese la materia que desee agregar: ");
-    scanf ("%s", agr_materia);
+    do
+    {
+        agr_valida = 0;
+        printf ("\nLista de materias validas: ");
+        for (int i = 0; i < 6; i++)
+        {
+            printf ("%s, ", materias_validas [i]);
+        }
+        printf ("\nIngrese la materia que desee agregar (de la lista de materias validas): ");
+        scanf ("%s", agr_materia);
+        for (int i = 0; i < 6; i++)
+        {
+            if (strcmp (agr_materia, materias_validas [i]) == 0)
+            {
+                agr_valida = 1;
+                break;
+            }
+        }
+        for (int i = 0; i < estudiante.num_materias; i++)
+        {
+            if (strcmp (agr_materia, estudiante.materias [i]) == 0)
+            {
+                agr_valida = 0;
+                printf ("Materia ya existente\n");
+                break;
+            }
+        }
+    } while (!agr_valida);
     printf ("\nAgregando materia: %s\n", agr_materia);
     agregarMateria (&estudiante, agr_materia);
     mostrarMaterias (&estudiante);
     do
     {
         elim_valida = 0;
-        printf ("\nIngrese la materia que desee eliminar: ");
+        printf ("\nIngrese la materia que desee eliminar (de las materias existentes): ");
         scanf ("%s", elim_materia);
         for (int i = 0 ; i < estudiante.num_materias; i++)
         {
