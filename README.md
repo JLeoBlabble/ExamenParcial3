@@ -15,3 +15,8 @@ Respuesta: d) Una plantilla para crear objetos, proporciona una definición inic
 
 ### Pregunta 4: ¿Qué son los templates en C++?
 Respuesta: b) Permiten la creación de funciones y clases genéricas, es decir, que pueden trabajar con cualquier tipo de datos.
+
+### Pregunta 5: ¿Cuál de los dos lenguajes consideras más adecuado para el proyecto del CGEA?
+Respuesta: Consideramos que el lenguaje más adecuado para el proyecto es C++. Esto se debe a que, al ser un lenguaje más moderno, tiene características muy útiles como el control de errores entre otras, lo cual C no tiene.
+
+### Pregunta 6: ¿Qué recomendaciones harías al equipo de desarrollo del CGEA para la siguiente fase del proyecto?
