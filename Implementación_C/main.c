@@ -13,7 +13,6 @@ int main ()
     int agregar;
     char agr_materia [30];
     int eliminar;
-    char elim_materia [30];
     char materias_validas [6][30]= {"Programacion", "Matematicas", "Fisica", "Ingles", "Informatica", "Tecnicas-de-la-Comunicacion"};
 
     Asistencia asistencia;
@@ -97,6 +96,7 @@ int main ()
     } while (agregar == 1 && estudiante.num_materias < 6);
     do
     {
+        char elim_materia [30];
         printf ("¿Desea eliminar una materia? (1 para si, 0 para no): ");
         scanf ("%d", &eliminar);
         if (eliminar == 1)
@@ -132,10 +132,10 @@ int main ()
     De nuevo, se usa el bucle do-while para asegurarse de que tanto la materia como el estado sean validos.
     */
 
-    do
+    if (estudiante.num_materias != 0)
+    {
+        do
         {
-        if (estudiante.num_materias > 0)
-            {
             printf ("\n¿Desea registrar una asistencia? (1 para si, 0 para no): ");
             scanf ("%d", &asistir);
             if (asistir == 1)
@@ -174,10 +174,10 @@ int main ()
             {
                 printf ("Ninguna asistencia sera registrada.");
             }
-        }
-    } while (asistir == 1 && estudiante.num_materias > 0);
-    if (estudiante.num_materias == 0)
+        } while (asistir == 1 && estudiante.num_materias > 0);
+    }
+    else
     {
-        printf ("\nNo se pueden registrar asistencias al no haber materias");
+        printf ("\nNo se pueden registrar asistencias al no haber materias.");
     }
 }
