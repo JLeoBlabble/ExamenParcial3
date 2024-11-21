@@ -35,7 +35,7 @@ void Estudiante::agregarMateria() {
 
     while (materiaViabilidad == false) {
         for (int i = 0; i < 6; i++) {
-            if (materiaAgregada == materiasViables[i]) {
+            if (materiaAgregada == materiasViables[i] && materiaAgregada != materias[i]) {
                 materiaViabilidad = true;
                 break;
             }
@@ -67,7 +67,7 @@ void Estudiante::eliminarMateria() {
 
     while (materiaViabilidad == false) {
         for (int i = 0; i < 6; i++) {
-            if (materiaEliminada == materias[i]) {
+            if (materiaEliminada == materiasViables[i]  && materiaEliminada != materias[i]) {
                 materiaViabilidad = true;
                 break;
             }

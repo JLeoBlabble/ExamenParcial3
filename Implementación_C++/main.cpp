@@ -44,19 +44,51 @@ int main() {
 
     Asistencia asistencia;
 
-    cout << "Introduzca la fecha de asistencia del estudiante: " << endl;
+    cout << "Introduzca la fecha de asistencia del estudiante (DD/MM/AAAA): " << endl;
     cin >> asistencia.fecha;
 
+    bool materiaViabilidad = false;
     cout << "Introduzca la materia a la que no/asistió el estudiante: " << endl;
     cin >> asistencia.materia;
+    while (materiaViabilidad == false) {
+        for (int i = 0; i < 6; i++) {
+            if (asistencia.materia == estudiante.materiasViables[i]) {
+                materiaViabilidad = true;
+                break;
+            }
+        }
+        if (materiaViabilidad == false) {
+            cout << "Un estudiante de ingeniería informática sólo tiene las siguientes materias: ";
+            for (int i = 0; i < 6; i++) {
+                cout << estudiante.materiasViables[i] << ", ";
+            }
+            cout << "\nPor favor introduzca una de las materias previamente señalizadas: ";
+            cin >> asistencia.materia;
+        }
+    }
 
-    cout << "Introduzca el estado de asistencia del estudiante: " << endl;
+    bool estadoViabilidad = false;
+    cout << "Introduzca el estado de asistencia del estudiante (asistió, falta, tardanza): " << endl;
     cin >> asistencia.estado;
+    while (estadoViabilidad == false) {
+        if (asistencia.estado == "asistió" || asistencia.estado == "falta" || asistencia.estado == "tardanza") {
+            estadoViabilidad = true;
+            break;
+        }
+        else if (estadoViabilidad == false) {
+            cout << "Las únicas opciones viables son las siguientes: asistió, falta, y tardanza. ";
+            for (int i = 0; i < 6; i++) {
+                cout << estudiante.materiasViables[i] << ", ";
+            }
+            cout << "\nPor favor introduzca una de las opciones previamente señalizadas: ";
+            cin >> asistencia.estado;
+        }
+    }
 
     asistencia.mostrarAsistencia(asistencia.fecha, asistencia.materia, asistencia.estado);
+
 }
 
 // preguntar si quiere añadir/preguntar, preguntar si quiere seguir añadiendo/eliminando
 // error por si mete algo q no deberia
-// lista de materias posibles
-// edad no sea letras
+// no repetir amterias
