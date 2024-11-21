@@ -29,22 +29,59 @@ void Estudiante::mostrarMaterias() {
 
 void Estudiante::agregarMateria() {
     string materiaAgregada;
+    bool materiaViabilidad = false;
     cout << "Introduzca la materia que deseas agregar: ";
     cin >> materiaAgregada;
-    for (int i = 0; i < 4; i++) {
+
+    while (materiaViabilidad == false) {
+        for (int i = 0; i < 6; i++) {
+            if (materiaAgregada == materiasViables[i]) {
+                materiaViabilidad = true;
+                break;
+            }
+        }
+        if (materiaViabilidad == false) {
+            cout << "Un estudiante de ingeniería informática sólo tiene las siguientes materias: ";
+            for (int i = 0; i < 6; i++) {
+                cout << materiasViables[i] << ", ";
+            }
+            cout << "\nPor favor introduzca una de las materias previamente señalizadas: ";
+            cin >> materiaAgregada;
+        }
+    }
+
+    for (int i = 0; i < 6; i++) {
         if (materias[i].empty()) {
             materias[i] = materiaAgregada;
             cout << "La materia agregada es: " << materiaAgregada << endl;
-            return;
-
+            break;
         }
     }
 }
 
 void Estudiante::eliminarMateria() {
     string materiaEliminada;
+    bool materiaViabilidad = false;
     cout << "Introduzca la materia que deseas eliminar: ";
     cin >> materiaEliminada;
+
+    while (materiaViabilidad == false) {
+        for (int i = 0; i < 6; i++) {
+            if (materiaEliminada == materias[i]) {
+                materiaViabilidad = true;
+                break;
+            }
+        }
+        if (materiaViabilidad == false) {
+            cout << "Un estudiante de ingeniería informática sólo tiene las siguientes materias: ";
+            for (int i = 0; i < 6; i++) {
+                cout << materiasViables[i] << ", ";
+            }
+            cout << "\nPor favor introduzca una de las materias previamente señalizadas: ";
+            cin >> materiaEliminada;
+        }
+    }
+
     for (int i = 0; i < 5; i++) {
         if (materias[i] == materiaEliminada) {
             materias[i] = "";

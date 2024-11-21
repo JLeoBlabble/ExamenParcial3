@@ -6,9 +6,13 @@ using namespace std;
 class Asistencia {
 public:
 
+    string fecha;
     string materia;
     string estado;  // Asistió, falta, tardanza
 
+    Asistencia();
+
+    void mostrarAsistencia(string fecha, string materia, string estado);
 
 };
 
