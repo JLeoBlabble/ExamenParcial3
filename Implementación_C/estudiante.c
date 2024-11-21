@@ -42,14 +42,14 @@ void mostrarMaterias (Estudiante *est)
 
 void agregarMateria (Estudiante *est, const char *materia)
 {
-    if (est -> num_materias < 5)
+    if (est -> num_materias < 6)
     {
         strncpy (est -> materias [est -> num_materias], materia, sizeof (est -> materias [est -> num_materias]));
         est -> num_materias++;
     }
     else
     {
-        printf ("No se pueden agregar más materias\n");
+        printf ("No se pueden agregar mas materias\n");
     }
 }
 

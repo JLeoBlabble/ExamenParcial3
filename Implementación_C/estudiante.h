@@ -10,7 +10,7 @@ typedef struct
     int edad;
     float promedio;
 
-    char materias[5][20];
+    char materias[6][30];
     int num_materias;
 }
 
