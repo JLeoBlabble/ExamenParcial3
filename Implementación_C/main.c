@@ -10,17 +10,14 @@ int main ()
     // Definicion de las variables del estudiante y de la asistencia
 
     Estudiante estudiante;
+    int agregar;
     char agr_materia [30];
+    int eliminar;
     char elim_materia [30];
-    int elim_valida;
-    int agr_valida;
     char materias_validas [6][30]= {"Programacion", "Matematicas", "Fisica", "Ingles", "Informatica", "Tecnicas de la Comunicacion"};
 
     Asistencia asistencia;
-    char asist_fecha [10];
-    char asist_materia [20];
-    char asist_estado [20];
-    int materia_valida;
+    int asistir;
 
     /*
     Se pide al usuario que introduzca el nombre, la edad y el promedio del estudiante.
@@ -53,52 +50,73 @@ int main ()
     Y al igual que en el caso anterior, se usa el bucle do-while para asegurarse de que las materias sean validas.
     */
 
-    do
+    printf ("¿Desea agregar una materia? (1 para si, 0 para no): ");
+    scanf ("%d", &agregar);
+
+    if (agregar == 1)
     {
-        agr_valida = 0;
-        printf ("\nLista de materias validas: ");
-        for (int i = 0; i < 6; i++)
+        int agr_valida;
+        do
         {
-            printf ("%s, ", materias_validas [i]);
-        }
-        printf ("\nIngrese la materia que desee agregar (de la lista de materias validas): ");
-        scanf ("%s", agr_materia);
-        for (int i = 0; i < 6; i++)
-        {
-            if (strcmp (agr_materia, materias_validas [i]) == 0)
+            agr_valida = 0;
+            printf ("\nLista de materias validas: ");
+            for (int i = 0; i < 6; i++)
             {
-                agr_valida = 1;
-                break;
+                printf ("%s, ", materias_validas [i]);
             }
-        }
-        for (int i = 0; i < estudiante.num_materias; i++)
-        {
-            if (strcmp (agr_materia, estudiante.materias [i]) == 0)
+            printf ("\nIngrese la materia que desee agregar (de la lista de materias validas): ");
+            scanf ("%s", agr_materia);
+            for (int i = 0; i < 6; i++)
             {
-                agr_valida = 0;
-                printf ("Materia ya existente\n");
-                break;
+                if (strcmp (agr_materia, materias_validas [i]) == 0)
+                {
+                    agr_valida = 1;
+                    break;
+                }
             }
-        }
-    } while (!agr_valida);
-    printf ("\nAgregando materia: %s\n", agr_materia);
+            for (int i = 0; i < estudiante.num_materias; i++)
+            {
+                if (strcmp (agr_materia, estudiante.materias [i]) == 0)
+                {
+                    agr_valida = 0;
+                    printf ("Materia ya existente\n");
+                    break;
+                }
+            }
+        } while (!agr_valida);
+        printf ("\nAgregando materia: %s\n", agr_materia);
+    }
+    else if (agregar == 0)
+    {
+        printf ("Ninguna materia sera agregada.\n");;
+    }
     agregarMateria (&estudiante, agr_materia);
     mostrarMaterias (&estudiante);
-    do
+    printf ("¿Desea eliminar una materia? (1 para si, 0 para no): ");
+    scanf ("%d", &eliminar);
+    if (eliminar == 1)
     {
-        elim_valida = 0;
-        printf ("\nIngrese la materia que desee eliminar (de las materias existentes): ");
-        scanf ("%s", elim_materia);
-        for (int i = 0 ; i < estudiante.num_materias; i++)
+        int elim_valida;
+        do
         {
-            if (strcmp (elim_materia, estudiante.materias[i]) == 0)
+            elim_valida = 0;
+            printf ("\nIngrese la materia que desee eliminar (de las materias existentes): ");
+            scanf ("%s", elim_materia);
+            for (int i = 0 ; i < estudiante.num_materias; i++)
             {
-                elim_valida = 1;
-                break;
+                if (strcmp (elim_materia, estudiante.materias[i]) == 0)
+                {
+                    elim_valida = 1;
+                    break;
+                }
             }
-        }
-    } while (!elim_valida);
-    printf ("\nEliminando materia: %s\n", elim_materia);
+        } while (!elim_valida);
+        printf ("\nEliminando materia: %s\n", elim_materia);
+    }
+    else if (eliminar == 0)
+    {
+        printf ("Ninguna materia sera eliminada.\n");
+    }
     eliminarMateria (&estudiante, elim_materia);
     mostrarMaterias (&estudiante);
 
@@ -107,28 +125,42 @@ int main ()
     De nuevo, se usa el bucle do-while para asegurarse de que tanto la materia como el estado sean validos.
     */
 
-    printf ("\nIngrese la fecha de la asistencia (DD/MM/AAAA): ");
-    scanf ("%s", asist_fecha);
-    do
+    printf ("\n¿Desea registrar una asistencia? (1 para si, 0 para no): ");
+    scanf ("%d", &asistir);
+    if (asistir == 1)
     {
-        materia_valida = 0;
-        printf ("Ingrese la materia de la asistencia (dentro de las materias existentes): ");
-        scanf ("%s", asist_materia);
-        for (int i = 0; i < estudiante.num_materias; i++) {
-            if (strcmp (asist_materia, estudiante.materias[i]) == 0 || strcmp (asist_materia, agr_materia) == 0)
+        char asist_fecha [10];
+        char asist_materia [20];
+        char asist_estado [20];
+        int materia_valida;
+        printf ("\nIngrese la fecha de la asistencia (DD/MM/AAAA): ");
+        scanf ("%s", asist_fecha);
+        do
+        {
+            materia_valida = 0;
+            printf ("Ingrese la materia de la asistencia (dentro de las materias existentes): ");
+            scanf ("%s", asist_materia);
+            for (int i = 0; i < estudiante.num_materias; i++)
             {
+                if (strcmp (asist_materia, estudiante.materias[i]) == 0 || strcmp (asist_materia, agr_materia) == 0)
+                {
                 materia_valida = 1;
                 break;
+                }
             }
-        }
-    } while (!materia_valida);
-    do
-    {
-        printf("Ingrese el estado de la asistencia (asistido, faltado, o llegado tarde): ");
-        scanf(" %[^\n]", asist_estado);
-    } while (strcmp(asist_estado, "asistido") != 0 && strcmp(asist_estado, "faltado") != 0 && strcmp(asist_estado, "llegado tarde") != 0);
-    inicializarAsistencia (&asistencia, asist_fecha, asist_materia, asist_estado);
-    printf ("\n%s: ", estudiante.nombre);
+        } while (!materia_valida);
+        do
+        {
+            printf("Ingrese el estado de la asistencia (asistido, faltado, o llegado tarde): ");
+            scanf(" %[^\n]", asist_estado);
+        } while (strcmp(asist_estado, "asistido") != 0 && strcmp(asist_estado, "faltado") != 0 && strcmp(asist_estado, "llegado tarde") != 0);
+        inicializarAsistencia (&asistencia, asist_fecha, asist_materia, asist_estado);
+        printf ("\n%s: ", estudiante.nombre);
 
-    mostrarAsistencia (&asistencia);
+        mostrarAsistencia (&asistencia);
+    }
+    else  if (asistir == 0)
+    {
+        printf ("Ninguna asistencia sera registrada.");
+    }
 }
