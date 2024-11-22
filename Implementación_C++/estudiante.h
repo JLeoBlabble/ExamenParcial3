@@ -3,6 +3,12 @@
 #include <string>
 using namespace std;
 
+/* Definir clase Estudiante, con los valores de nombre, edad y promedio.
+ * Tiene dos arrays, uno que contiene las materias actuales en el horario del estudiante,
+ * y otra todas las asignaturas viables/del curso.
+ * Al final, se definen las funciones requeridas por el ejercicio.
+ */
+
 class Estudiante {
     public:
 

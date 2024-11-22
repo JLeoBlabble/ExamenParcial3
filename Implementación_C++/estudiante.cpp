@@ -4,6 +4,10 @@
 #include "estudiante.h"
 using namespace std;
 
+/* Implementa la clase Estudiante, que incluye dentro de esta las funciones requeridas por el ejercicio;
+ * mostrar la información del estudiante, mostrar las materias en su horario, y una modificación de dicho horario.
+ */
+
 Estudiante::Estudiante() {
     string nombre;
     int edad;
@@ -23,6 +27,12 @@ void Estudiante::mostrarMaterias() {
     }
     cout << endl;
 }
+
+/* En las funciones de agregar y eliminar una materia, se pregunta al usuario (S/N)
+ * si desea realizar dicha acción, tras comprobar si la lista está vacía/llena,
+ * en cuál caso le avisa al usuario y no le permite hacer cambios.
+ * Si se introduce otra respuesta, se le vuelve a preguntar al usuario.
+ */
 
 void Estudiante::agregarMateria() {
     string siNO;

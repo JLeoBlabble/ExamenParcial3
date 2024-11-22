@@ -3,6 +3,10 @@
 #include <string>
 using namespace std;
 
+/* Definir clase Asistencia, con los valores de fecha, materia y estado de asistencia.
+ * Seguidamente, se definen las funciones requeridas por el ejercicio.
+ */
+
 class Asistencia {
 public:
 

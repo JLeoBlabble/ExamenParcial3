@@ -5,8 +5,18 @@
 #include "asistencia.h"
 using namespace std;
 
+/* Función principal del programa.
+ * Su propósito es interactuar con el usuario para recibir las respuestas necesarias
+ * para completar los datos requiridos por las funciones en los archivos header,
+ * para después llamar a esas funciones y hacer que realicen su código.
+ */
+
 int main() {
     Estudiante estudiante;
+
+    /* Preguntar datos del estudiante, asegurándose de que la edad y el promedio sean viables
+     * en caso contrario, se vuelve a preguntar.
+    */
 
     cout << "Introduzca el nombre del estudiante: " << endl;
     cin >> estudiante.nombre;
@@ -40,8 +50,27 @@ int main() {
     estudiante.agregarMateria();
     estudiante.mostrarMaterias();
 
+    // Preguntar al usuario si desea pasar asistencia. Si no, termina el programa
+    char registrarAsistencia;
+    while (true) {
+        cout << "¿Desea registrar asistencia? (Y/N): ";
+        cin >> registrarAsistencia;
+        if (registrarAsistencia == 'Y' || registrarAsistencia == 'N') {
+            break;
+        } else {
+            cout << "Respuesta no válida. Por favor, introduzca 'Y' o 'N'." << endl;
+        }
+    }
+
+    if (registrarAsistencia == 'N') {
+        return 0;
+    }
+
     Asistencia asistencia;
 
+    /* Preguntar los datos de asistencia, asegurándose de que la materia y el estado sean viables.
+     * En caso contrario, se vuelve a preguntar.
+    */
     cout << "Introduzca la fecha de asistencia del estudiante (DD/MM/AAAA): " << endl;
     cin >> asistencia.fecha;
 
@@ -78,6 +107,3 @@ int main() {
 
     return 0;
 }
-
-// Horario lleno agregar materias, horario vacío eliminar materias
-// preguntar si registrar asistencia, si no hay pone que no puede

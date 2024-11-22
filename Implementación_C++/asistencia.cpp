@@ -3,6 +3,11 @@
 #include <string>
 using namespace std;
 
+/* Implementa la clase Asistencia, con sus tres valores
+ * y la función requerida por el ejercicio, mostrarAsistencia,
+ * que imprime al usuario los datos de la asistencia del alumno.
+ */
+
 Asistencia::Asistencia() {
 
     string fecha;
