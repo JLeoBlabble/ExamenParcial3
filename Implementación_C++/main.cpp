@@ -57,12 +57,12 @@ int main() {
     // Preguntar al usuario si desea pasar asistencia. Si no, termina el programa
     char registrarAsistencia;
     while (true) {
-        cout << "¿Desea registrar asistencia? (Y/N): ";
+        cout << "¿Desea registrar asistencia? (S/N): ";
         cin >> registrarAsistencia;
-        if (registrarAsistencia == 'Y' || registrarAsistencia == 'N') {
+        if (registrarAsistencia == 'S' || registrarAsistencia == 'N') {
             break;
         } else {
-            cout << "Respuesta no válida. Por favor, introduzca 'Y' o 'N'." << endl;
+            cout << "Respuesta no válida. Por favor, introduzca 'S' o 'N'." << endl;
         }
     }
 
@@ -78,33 +78,37 @@ int main() {
     cout << "Introduzca la fecha de asistencia del estudiante (DD/MM/AAAA): " << endl;
     cin >> asistencia.fecha;
 
-    cout << "Introduzca la materia a la que no/asistió el estudiante: " << endl;
-    cin >> asistencia.materia;
-    try {
-        bool materiaViable = false;
-        for (int i = 0; i < 6; i++) {
-            if (asistencia.materia == estudiante.materiasViables[i]) {
-                materiaViable = true;
-                break;
+    while (true) {
+        cout << "Introduzca la materia a la que no/asistió el estudiante: " << endl;
+        cin >> asistencia.materia;
+        try {
+            bool materiaViable = false;
+            for (int i = 0; i < 6; i++) {
+                if (asistencia.materia == estudiante.materias[i] && !estudiante.materias[i].empty()) {
+                    materiaViable = true;
+                    break;
+                }
             }
+            if (!materiaViable) {
+                throw invalid_argument("El estudiante no tiene esa materia en su horario actual.");
+            }
+            break;
+        } catch (const invalid_argument& e) {
+            cout << e.what() << endl;
         }
-        if (materiaViable == false) {
-            throw invalid_argument("Materia no viable");
-        }
-    } catch (const invalid_argument& e) {
-        cout << e.what() << endl;
-        return 1;
     }
 
-    cout << "Introduzca el estado de asistencia del estudiante (asistió, falta, tardanza): " << endl;
-    cin >> asistencia.estado;
-    try {
-        if (asistencia.estado != "asistió" && asistencia.estado != "falta" && asistencia.estado != "tardanza") {
-            throw invalid_argument("Estado de asistencia no viable");
+    while (true) {
+        cout << "Introduzca el estado de asistencia del estudiante (asistió, falta, tardanza): " << endl;
+        cin >> asistencia.estado;
+        try {
+            if (asistencia.estado != "asistió" && asistencia.estado != "falta" && asistencia.estado != "tardanza") {
+                throw invalid_argument("Estado de asistencia no viable");
+            }
+            break;
+        } catch (const invalid_argument& e) {
+            cout << e.what() << endl;
         }
-    } catch (const invalid_argument& e) {
-        cout << e.what() << endl;
-        return 1;
     }
 
     asistencia.mostrarAsistencia(asistencia.fecha, asistencia.materia, asistencia.estado);
