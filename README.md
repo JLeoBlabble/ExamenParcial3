@@ -53,3 +53,55 @@ Control de Excepciones: C++ tiene soporte para el manejo de excepciones mediante
 Compatibilidad: C es independiente de C++.
 
 Velocidad y Complejidad: C es simple e ideal para aplicaciones que requieran mucha eficiencia y control sobre el hardware. En cambio C++, al tener capacidad de orientacion a objetos, puede resultar mas complejo y extenso.
+
+# Ejercicios (Parte 2): 
+Todos los ejercicios tienen funciones que son llamadas en el main.c de cada ejecutable.
+Los ejercicios se han realizado dos veces en lenguaje C y C++, divididos en dos directorios llamados "Implementación_C" e "Implementación_C++"
+
+## Ejercicio 1 - Estructura del estudiante 
+Localizados en "estudiante.h" y "estudiante.c/pp" en los dos directorios. 
+
+En el primer ejercicio, creamos una nueva clase que llamamos "Estudiante", en la cual incluimos tres campos: el nombre, la edad, y el promedio de un estudiante.
+Estos tres datos hemos hecho para que el sistema le pregunte al usuario para que ellos mismos puedan introducir sus valores. 
+Si algún dato no es válido (ej. una edad menor de 18 o un promedio mayor de 10) el sistema repetira la questión.
+Una vez obtenida los datos, utilizamos una función que hemos creado llamada "mostrarEstudiante()" que devolvera los valores introducidos.
+
+### Enunciado Ejercicio 1: 
+C++:
+Implementa una estructura llamada Estudiante con los campos: nombre, edad, y promedio.
+Desarrolla la función mostrarEstudiante() que muestre todos los campos de la estructura.
+
+C:
+Realiza una implementación equivalente en el lenguaje C.
+
+## Ejercicio 2 - Gestión de materias
+Como en el ejercicio anterior, ambas versiones del código están divididos entre los "estudiante.h" y "estudiante.c/cpp" de sus respectivos directorios.
+
+En este ejercicio, empezamos creando una lista de materias que el estudiante tendrá por defecto, estas siendo "Matemáticas", "Programaciõn", "Inglés" e "Informática". 
+Siguiendo esto, creamos una serie de funciones, vinculandolas a la clase de Estudiante que creamos en el primer ejercicio, para que el usuario pueda modificar esta lista de estudiantes. El usuario, dentro del límite de 6 materias disponibles para un alumno de ingeniería informática, puede añadir y eliminar las que quiera, siendo preguntado si desea seguir añadiendo/eliminando o no.
+Si la lista está llena, vacía, o el usuario ha introducido una materia más de una vez, será avisado.
+Por último, el programa mostrará esta misma lista de materias dos veces: la primera como era originalmente, y la segunda con los cambios realizados. 
+
+### Enunciado Ejercicio 2: 
+C++:
+Añade a la estructura Estudiante una lista o vector de materias en las que está inscrito.
+Implementa funciones para agregar, eliminar y mostrar estas materias.
+
+C:
+Realiza una implementación equivalente en el lenguaje C.
+
+## Ejercicio 3 - Registro de asistencia
+Para este ejercicio, creamos archivos .h y .c/pp nuevos, con el nombre de "asistencia" (en ambos directorios).
+
+Tal como en el primer ejercicio con la clase de Estudiantes, en este hicimos algo igual creando una nueva clase llamada "Asistencia", en la cual definimos otra serie de tres valores relacionados con la asistencia de un alumno; la fecha de la incidencia, la materia a la que asistió o falto, y el estado de sus asistencia, si llego tarde, a tiempo, o faltó.
+Posteriormente, relacionando las dos clases, creamos una serie de funciones para que el própio usuario pueda rellenar estos tres campos.
+Primero, hicimos un código para que le pregunte al usuario si siquiera desea registrar la asistencia. Si no, pues todo el programa ya ha finalizado. Si mete algo distinto a "S" o "N", el programa le volverá a preguntar, y si introduce "S", seguirá.
+Seguidamente, el programa empezará preguntando al usuario por la información requirida por las tres variables. Si ocurre alguna incidencia, como si introduces que un alumno ha asistido/faltado a una materia que no tiene en su horario actual, se le avisará y podrá volver a contestar.
+
+### Enunciado Ejercicio 3: 
+C++:
+Diseña una clase o estructura Asistencia que contenga: fecha, materia y estado (asistió, falta, tardanza).
+Integra esta estructura con Estudiante y desarrolla funciones para registrar y mostrar la asistencia.
+
+C:
+Realiza una implementación equivalente en el lenguaje C.
