@@ -11,7 +11,7 @@ class Estudiante {
     float promedio;
 
     string materias[6] = {"Matemáticas", "Programación", "Inglés", "Informática"};
-    string materiasViables[6] = {"Matemáticas", "Programación", "Inglés", "Informática", "Física", "Técnicas de Comunicación"};
+    string materiasViables[6] = {"Matemáticas", "Programación", "Inglés", "Informática", "Física", "Técnicas-de-Comunicación"};
 
     Estudiante();
 

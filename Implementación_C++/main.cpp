@@ -55,7 +55,7 @@ int main() {
                 break;
             }
         }
-        if (!materiaViable) {
+        if (materiaViable == false) {
             throw invalid_argument("Materia no viable");
         }
     } catch (const invalid_argument& e) {
@@ -79,6 +79,5 @@ int main() {
     return 0;
 }
 
-// preguntar si quiere añadir/preguntar, preguntar si quiere seguir añadiendo/eliminando
-// error por si mete algo q no deberia
-// no repetir amterias
+// Horario lleno agregar materias, horario vacío eliminar materias
+// preguntar si registrar asistencia, si no hay pone que no puede
