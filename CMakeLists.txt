@@ -12,9 +12,3 @@ add_executable(Lenguaje_C++
         Implementación_C++/asistencia.h
         Implementación_C++/asistencia.cpp)
 
-add_executable (Lenguaje_C
-        Implementación_C/main.c
-        Implementación_C/estudiante.h
-        Implementación_C/estudiante.c
-        Implementación_C/asistencia.h
-        Implementación_C/asistencia.c)

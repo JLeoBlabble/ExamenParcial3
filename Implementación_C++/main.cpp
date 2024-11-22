@@ -21,26 +21,30 @@ int main() {
     cout << "Introduzca el nombre del estudiante: " << endl;
     cin >> estudiante.nombre;
 
-    cout << "Introduzca la edad del estudiante: " << endl;
-    cin >> estudiante.edad;
-    try {
-        if (estudiante.edad < 18 || estudiante.edad > 100) {
-            throw invalid_argument("Edad no viable para estudiante de universidad (>= 18 y <= 100)");
+    while (true) {
+        cout << "Introduzca la edad del estudiante: " << endl;
+        cin >> estudiante.edad;
+        try {
+            if (estudiante.edad < 18 || estudiante.edad > 100) {
+                throw invalid_argument("Edad no viable para estudiante de universidad (>= 18 y <= 100)");
+            }
+            break;
+        } catch (const invalid_argument& e) {
+            cout << e.what() << endl;
         }
-    } catch (const invalid_argument& e) {
-        cout << e.what() << endl;
-        return 1;
     }
 
-    cout << "Introduzca el promedio del estudiante: " << endl;
-    cin >> estudiante.promedio;
-    try {
-        if (estudiante.promedio < 0 || estudiante.promedio > 10) {
-            throw invalid_argument("Promedio no viable (>= 0 y <= 10)");
+    while (true) {
+        cout << "Introduzca el promedio del estudiante: " << endl;
+        cin >> estudiante.promedio;
+        try {
+            if (estudiante.promedio < 0 || estudiante.promedio > 10) {
+                throw invalid_argument("Promedio no viable (>= 0 y <= 10)");
+            }
+            break;
+        } catch (const invalid_argument& e) {
+            cout << e.what() << endl;
         }
-    } catch (const invalid_argument& e) {
-        cout << e.what() << endl;
-        return 1;
     }
 
     estudiante.mostrarEstudiante(estudiante.nombre, estudiante.edad, estudiante.promedio);
