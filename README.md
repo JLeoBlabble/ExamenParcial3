@@ -20,3 +20,16 @@ Respuesta: b) Permiten la creación de funciones y clases genéricas, es decir, 
 Respuesta: Consideramos que el lenguaje más adecuado para el proyecto es C++. Esto se debe a que, al ser un lenguaje más moderno, tiene características muy útiles como el control de errores entre otras, lo cual C no tiene.
 
 ### Pregunta 6: ¿Qué recomendaciones harías al equipo de desarrollo del CGEA para la siguiente fase del proyecto?
+
+
+# Diferencias entre C y C++
+
+Programacion: C es un lenguaje procedural, por lo que se enfoca principalmente en las funciones. Mientras que C++ es un lenguaje multiparadigma, lo que significa que soporta tanto programacion procedural como orientado a objetos.
+
+Bibiotecas Estandar: Las bibloitecas estantdar de C estan mas limitadas, teniendo principalmente funciones basicas. A diferencia de las de C++ que tienen incluidas funciones mas complejas.
+
+Control de Excepciones: C++ tiene soporte para el manejo de excepciones mediante try, catch y throw, las cuales hacen el trabajo mucho mas sencillo. No como C que no tiene ningun soporte para el manejo de excepciones incluido.
+
+Compatibilidad: C es independiente de C++.
+
+Velocidad y Complejidad: C es simple e ideal para aplicaciones que requieran mucha eficiencia y control sobre el hardware. En cambio C++, al tener capacidad de orientacion a objetos, puede resultar mas complejo y extenso.
