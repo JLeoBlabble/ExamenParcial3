@@ -2,6 +2,8 @@
 
 https://github.com/JLeoBlabble/ExamenParcial3.git 
 
+Trabajo realizado con apoyo de Github Copilot. 
+
 ## Parte 1: Teoría 
 
 ### Pregunta 1: ¿Cuál es la principal diferencia entre la estructura básica del programa en C y C++?
@@ -20,7 +22,25 @@ Respuesta: b) Permiten la creación de funciones y clases genéricas, es decir, 
 Respuesta: Consideramos que el lenguaje más adecuado para el proyecto es C++. Esto se debe a que, al ser un lenguaje más moderno, tiene características muy útiles como el control de errores entre otras, lo cual C no tiene.
 
 ### Pregunta 6: ¿Qué recomendaciones harías al equipo de desarrollo del CGEA para la siguiente fase del proyecto?
+Para la siguiente fase del proyecto del Centro Global de Estudios Avanzados (CGEA), recomendamos utilizar C++ como lenguaje principal para el desarrollo del sistema de gestión académica del CGEA. Esto es debido a varios factores: 
 
+#### Naturaleza del Proyecto:
+C++ es ideal por su programación orientada a objetos (POO), facilitando la gestión de datos complejos y escalabilidad.
+
+#### Bibliotecas Estándar:
+Las bibliotecas de C++ son más completas, lo que reduce el tiempo de desarrollo y mejora la funcionalidad del sistema.
+
+#### Manejo de Excepciones:
+C++ permite gestionar errores de manera eficiente con try, catch, y throw, mejorando la estabilidad del sistema.
+
+#### Escalabilidad y Mantenimiento:
+La modularidad de C++ facilita el trabajo en equipo, un requisito para un sistema académico internacional.
+
+#### Interfaz de Usuario (UI):
+C++ soporta bibliotecas modernas como Qt, útiles para crear interfaces gráficas.
+
+#### Rendimiento y Control de Hardware:
+C++ es suficiente para la mayoría de las necesidades del sistema, mientras que C solo se considera para módulos críticos.
 
 # Diferencias entre C y C++
 
